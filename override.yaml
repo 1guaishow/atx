@@ -1,0 +1,36 @@
+kvmd:
+    gpio:
+        drivers:
+            reboot:
+                type: cmd
+                cmd: [/usr/bin/sudo, /usr/bin/power]
+            power:
+                type: cmd
+                cmd: [/usr/bin/sudo, /usr/bin/power]
+            power_button2:
+                type: cmd
+                cmd: [/usr/bin/sudo, /usr/bin/power,3]
+        scheme:
+            reboot_button:
+                driver: reboot
+                pin: 0
+                mode: output
+                switch: false
+            power_button:
+                driver: power
+                pin: 0
+                mode: output
+                switch: false
+            power_button2:
+                driver: power_button2
+                pin: 0
+                mode: output
+                switch: false
+        view:
+            table:
+                - ["#"]
+                - ["#<b>Control the server's power</b>"]
+                - ["#<b>Use the short click for ACPI shutdown</b>"]
+                - ["reboot_button|confirm|• Click Power <sup><i>short</i></sup>"]
+                - ["power_button|confirm|• Click Power <sup><i>long</i></sup>"]
+                - ["power_button2|confirm|• Click Reset"]
