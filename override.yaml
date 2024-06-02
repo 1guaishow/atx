@@ -3,7 +3,7 @@ kvmd:
         drivers:
             reboot:
                 type: cmd
-                cmd: [/usr/bin/sudo, /usr/bin/power]
+                cmd: [/usr/bin/sudo, /usr/bin/restart]
             power:
                 type: cmd
                 cmd: [/usr/bin/sudo, /usr/bin/power]
@@ -31,6 +31,6 @@ kvmd:
                 - ["#"]
                 - ["#<b>Control the server's power</b>"]
                 - ["#<b>Use the short click for ACPI shutdown</b>"]
-                - ["reboot_button|confirm|• Click Power <sup><i>short</i></sup>"]
-                - ["power_button|confirm|• Click Power <sup><i>long</i></sup>"]
-                - ["power_button2|confirm|• Click Reset"]
+                - ["power_button|confirm|• Click Power <sup><i>short</i></sup>"]
+                - ["power_button2|confirm|• Click Power <sup><i>long</i></sup>"]
+                - ["reboot_button|confirm|• Click Reset"]
